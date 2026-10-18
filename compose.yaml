@@ -28,13 +28,13 @@ services:
 
             # ── API mode ──────────────────────────────────────
             # Set API_MODE=true to run the API server for additional control options
-            #API_MODE: 'true'
-            #API_TOKEN: '${API_TOKEN}'             # required for API mode, see example.env
+            API_MODE: 'true'
+            API_TOKEN: '${API_TOKEN}'             # required for API mode, see example.env
             # API write/reveal capabilities are separate opt-ins and are off by default.
-            #API_ALLOW_SCHEDULE_WRITE: 'true'
-            #API_ALLOW_ENV_OVERRIDES: 'true'
-            #API_ALLOW_CONFIG_REVEAL: 'true'
-            #API_ALLOW_CONFIG_WRITE: 'true'
+API_ALLOW_SCHEDULE_WRITE=true
+API_ALLOW_ENV_OVERRIDES=true
+API_ALLOW_CONFIG_REVEAL=true
+API_ALLOW_CONFIG_WRITE=true
 
             #  ── Configuration ──────────────────────────────────────
             # Uncomment to override defaults, a full list of configuration options are in the README.
@@ -53,8 +53,8 @@ services:
 
         # ── API mode port mapping ──────────────────────────────────────
         # Uncomment when API_MODE=true
-        #ports:
-        #    - '3010:3010'
+        ports:
+            - '3010:3010'
 
         healthcheck:
             test: ['CMD-SHELL', 'scripts/docker/healthcheck.sh']
